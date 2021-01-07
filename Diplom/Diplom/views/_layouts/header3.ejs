@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Аптека Belladonna</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+
+  <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css'>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+
+  <link rel="stylesheet" href="../../css/catalogstyle.css">
+      <link rel="stylesheet" href="../../css/contact.css">
+      
+
+  
+</head>
+
+<body>
+
+  
+ <header>
+  <nav>
+  		<div id="search" class="container">
+  			<form action='/category/products' method='GET'>
+  				<input type="text" name="search" placeholder="Знайдіть ліки тут..."  id="input">
+  				<button type="submit" id="button"></button>
+  			</form>
+		</div>
+
+    	<div id="brand">
+      		<div id="logo"><img src="../../logo.png" id="logimg" class="logimg"></div>
+    		 <!-- <div id="word-mark"></div>-->
+   		 </div>
+
+    	<div id="menu">
+      		<div id="menu-toggle">
+        		<div id="menu-icon">
+          			<div class="bar"></div>
+          			<div class="bar"></div>
+          			<div class="bar"></div>
+        	</div>
+      </div>
+      <ul id="limg">
+        
+        <% pages.forEach(function(page){ %>
+                        <% if (page.slug == "home") { %>
+                        <li><a href="/"><%= page.title %></a></li>
+                        <% } else {%>
+                        <li><a href="/<%= page.slug %>"><%= page.title %></a></li>
+                        <% } %>
+                        <% }); %>
+        <li><a href="/#section00">Про нас</a></li>
+        <li><a href="/#section01" class="limg"><img src="../../map.png" style="width: 50px; height: 50px;"></a></li>
+        <li><a href="/#section02"class="limg"><img src="../../telegram.png" style="width: 50px; height: 50px;"></a></li>
+        <% if(user) { %>
+         <li><a href="/users/logout" class="limg">Hi <%= user.username %>. Logout</a></li>
+        <% } else { %>
+         <li><a href="/users/login" class="limg"><img src="../../vhod.png" style="width: 40px; height: 40px;"></a></li>
+        <% } %>
+        <li><a href="/cart/checkout" class="limg"><img src="../../korzina.png" style="width: 40px; height: 40px;">
+        <% if(typeof cart !=="undefined") { %>
+        <%= cart.length %>
+
+        <% } else { %>
+        0
+        <% } %>
+        
+        </a></li>
+      </ul>
+    </div>
+  </nav>
+  </header>
+  <div id="hero-section">
+  <div id="colLeft">
+      <div class="category-wrap">
+      <h3>Орган впливу</h3>
+      <table>
+        <tr><td><a href="/category/products">Усі продукти</a></td></tr>
+      <% categories.forEach(function(c){ %>
+
+
+        <tr><td><a href="/category/products/<%= c.slug %>"><%= c.title %></a></td></tr>
+        
+        <% }); %>
+      </table>
+    </div>
+     </div><!-- Конец коллефт -->
+
+
+
+
+ 
+ 
+
+    
+  
+
+
+  
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+    <script  src="../../js/contact.js"></script>
+    <script  src="../../js/index.js"></script>
+    
+    
+
+
+
+
+
+
+  
+    
+      
+  
+

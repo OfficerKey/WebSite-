@@ -1,0 +1,315 @@
+﻿<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Аптека Belladonna</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+
+  <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css'>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+
+      <link rel="stylesheet" href="css/style.css">
+      <link rel="stylesheet" href="css/contact.css">
+
+  
+</head>
+
+<body>
+
+  
+<header>
+  <nav>
+  		<div id="search" class="container">
+  			<form action='/category/products' method='GET'\>
+  				<input type="text" placeholder="Знайдіть ліки тут..."  id="input">
+  				<button type="submit" id="button"></button>
+  			</form>
+		</div>
+
+    	<div id="brand">
+      		<div id="logo"><img src="logo.png" id="logimg" class="logimg"></div>
+    		 <!-- <div id="word-mark"></div>-->
+   		 </div>
+
+    	<div id="menu">
+      		<div id="menu-toggle">
+        		<div id="menu-icon">
+          			<div class="bar"></div>
+          			<div class="bar"></div>
+          			<div class="bar"></div>
+        	</div>
+      </div>
+      <ul id="limg">
+      	<% pages.forEach(function(page){ %>
+                        <% if (page.slug == "home") { %>
+                        <li><a href="/"><%= page.title %></a></li>
+                        <% } else {%>
+                        <li><a href="/<%= page.slug %>"><%= page.title %></a></li>
+                        <% } %>
+                        <% }); %>
+        <li><a href="#section00">Про нас</a></li>
+        <li><a href="#section01" class="limg"><img src="map.png" style="width: 50px; height: 50px;"></a></li>
+        <li><a href="#section02"class="limg"><img src="telegram.png" style="width: 50px; height: 50px;"></a></li>
+       <% if(user) { %>
+         <li><a href="/users/logout" class="limg">Hi <%= user.username %>. Logout</a></li>
+        <% } else { %>
+         <li><a href="/users/login" class="limg"><img src="vhod.png" style="width: 40px; height: 40px;"></a></li>
+        <% } %>
+        <% if(user && user.admin == 1) { %>
+         <li><a href="/admin/pages" class="limg">Admin area</a></li>
+        <% } %>
+        <li><a href="/cart/checkout" class="limg"><img src="korzina.png" style="width: 40px; height: 40px;">
+            <% if(typeof cart !=="undefined") { %>
+        <%= cart.length %>
+
+        <% } else { %>
+        0
+        <% } %>
+        </a> 
+
+
+        </a></li>
+      </ul>
+    </div>
+  </nav>
+  </header>
+  <div id="hero-section" align="center">	
+    <!--<div id="head-line"></div>-->
+     <div class="cols">
+    
+
+    <div class="col" ontouchstart="this.classList.toggle('hover');"><a href="#">
+                <div class="container">
+                    <div class="front" style="background-image: url(krovo1.png);">
+                        <div class="inner" style="top: 75%;">
+                            <p>Кровообіг</p>
+                        </div>
+                    </div>
+                    <a href="/category/products/кровь"><div class="back">
+                        <div class="inner">
+                            <p>Натисніть, щоб переглянути препарати з категорії "Кровообіг"</p>
+                        </div>
+                    </div></a>
+                </div>
+            </a></div>
+
+    <div class="col" ontouchstart="this.classList.toggle('hover');"><a href="#">
+                <div class="container">
+                    <div class="front" style="background-image: url(zhel1.png);">
+                        <div class="inner" style="top: 75%;">
+                            <p>Органи травлення</p>
+                        </div>
+                    </div>
+                    <a href="/category/products/органи-травлення"><div class="back">
+                        <div class="inner">
+                            <p>Натисніть, щоб переглянути препарати з категорії "Органи травлення"</p>
+                        </div>
+                    </div></a>
+                </div>
+            </a></div>
+
+    <div class="col" ontouchstart="this.classList.toggle('hover');"><a href="#">
+                <div class="container">
+                    <div class="front" style="background-image: url(pochki1.png);">
+                        <div class="inner" style="top: 75%;">
+                            <p>Ниркові</p>
+                        </div>
+                    </div>
+                    <a href="/category/products/нирки"><div class="back">
+                        <div class="inner">
+                            <p>Натисніть, щоб переглянути препарати з категорії "Ниркові"</p>
+                        </div>
+                    </div></a>
+                </div>
+            </a></div>
+    <div class="col" ontouchstart="this.classList.toggle('hover');"><a href="#">
+                <div class="container">
+                    <div class="front" style="background-image: url(mocha1.png);">
+                        <div class="inner" style="top: 75%;">
+                            <p>Сечостатева система</p>
+                        </div>
+                    </div>
+                    <a href="/category/products/сечостатева-система"><div class="back">
+                        <div class="inner">
+                            <p>Натисніть, щоб переглянути препарати з категорії "Сечостатева система"</p>
+                        </div>
+                    </div></a>
+                </div>
+            </a></div>
+    <div class="col" ontouchstart="this.classList.toggle('hover');"><a href="#">
+                <div class="container">
+                    <div class="front" style="background-image: url(head1.png);">
+                        <div class="inner" style="top: 75%;">
+                            <p>Нервова система</p>
+                        </div>
+                    </div>
+                    <a href="/category/products/нервова-система"><div class="back">
+                        <div class="inner">
+                            <p>Натисніть, щоб переглянути препарати з категорії "Нервова система"</p>
+                        </div>
+                    </div></a>
+                </div>
+            </a></div>
+    <div class="col" ontouchstart="this.classList.toggle('hover');"><a href="#">
+                <div class="container">
+                    <div class="front" style="background-image: url(muscle1.png);">
+                        <div class="inner" style="top: 75%;">
+                            <p>Суглоби та м'язи</p>
+                        </div>
+                    </div>
+                   <a href="/category/products/суглоби-та-мязи"> <div class="back">
+                        <div class="inner">
+                            <p>Натисніть, щоб переглянути препарати з категорії "Суглоби та м'язи"</p>
+                        </div>
+                    </div></a>
+                </div>
+            </a></div>
+    <div class="col" ontouchstart="this.classList.toggle('hover');"><a href="#">
+                <div class="container">
+                    <div class="front" style="background-image: url(nose1.png);">
+                        <div class="inner" style="top: 75%;">
+                            <p>Ніс</p>
+                        </div>
+                    </div>
+                    <a href="/category/products/ніс"><div class="back">
+                        <div class="inner">
+                            <p>Натисніть, щоб переглянути препарати з категорії "Ніс"</p>
+                        </div>
+                    </div></a>
+                </div>
+            </a></div>
+
+        </div>
+    </div>
+    <section id="section00">
+  
+
+  <div class="bella">
+    <div class="post">
+        <div class="post-header">
+            <div class="post-image">
+                <img src="belladonna.jpg">
+            </div>
+            <h1>О нас "Аптека Belladonna"</h1>
+        </div>
+        <div class="post-content">
+            <p>Аптека Belladonna – це сучасна аптека, яка надає можливість піклуватись про власне здоров’я і благополуччя згідно принципів здорового образу життя. Наша місія – ми піклуємось про здоров’я населення та просуваємо культуру здорового способу життя. Белладонна звичайна (Atropa belladonna) — отруйна багаторічна трав'яниста рослина родини пасльонових. Настойки і екстракти белладонни використовують у медицині як болезаспокійливі і протиспазматичні засоби при шлунково-кишкових, нервових та інших захворюваннях. Белладонна культивується в Україні як лікарська рослина, тому на честь цієї рослини ми дали назву нашій аптеці. Будьте здорові!
+            </p>              
+        </div>
+    </div>
+</div>
+  
+</section>
+<section id="section01">
+  <div class="bella">
+    <div class="post">
+        <div class="post-header">
+            <div class="post-image">
+                <img src="maps.png">
+            </div>
+            <h1>Наші аптеки</h1>
+        </div>
+        <div class="post-content">
+            <p>Для вашої зручності,Ви можете купити ліки самостійно в нашій аптеці за адресою</p>  <a href="https://www.google.com.ua/maps/place/Аптека+АНЦ/@50.5246056,30.610346,19.12z/data=!4m5!3m4!1s0x40d4d1c184073daf:0x7f46c5e7e50848ad!8m2!3d50.5247525!4d30.610133?hl=ru">вулиця Бальзака 80, Київ</a>.
+            </p>              
+        </div>
+    </div>
+</div>
+</section>
+<section id="section02">
+  <div class="bella">
+    <div class="post">
+        <div class="post-header">
+            <div class="post-image">
+                <img src="bot.png">
+            </div>
+            <h1>Наш Tелеграм-бот "BotAptekaBelladona"</h1>
+        </div>
+        <div class="post-content">
+            <p>Для вашої зручності, ми зробили для вас можливість користуватися нашими послугами через додаток "Telegram". У нашому Телеграм-боті ви зможете: знайти потрібні вам ліки, переглянути інформацію про них та замовити, також переглянути всi адреси наших аптек та побачити їх на карті і це все в одному боті!
+            </p>              
+        </div>
+    </div>
+</div>
+</section>
+
+<div id="syka">
+
+<button id="contact-button">Напишіть нам!</button>
+
+<div id="pizdec">
+
+<div id="contact-form" class="form-container">
+  <form id="form">
+  	<span onclick="document.getElementById('pizdec').style.display='none'" class="close" title="Close Modal">×</span>
+    <h1>Напишіть нам</h1>
+    <div class="form-items">
+      <div class="form-control">
+        <div class="button-holders">Ім'я</div>
+        <input type="text" id="name" name="name" autocomplete="off"/>
+      </div>
+      <div class="form-control">
+        <div class="button-holders">Email</div>
+        <input type="text" id="email" name="email" autocomplete="off"/>
+      </div>
+      <div class="form-control">
+        <div class="button-holders">Текст</div>
+        <input type="text" id="message" name="message" autocomplete="off"/>
+      </div>
+    </div>
+    <button id="submit" type="submit">Надіслати</button>
+  </form>
+  <h1 id="success-msg">Дякуємо за ваше звернення! Ми відповімо вам найближчим часом!</h1>
+</div>
+
+</div>
+</div>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+    <script  src="js/contact.js"></script>
+    <script  src="js/index.js"></script>
+    <script>
+    $("#form").on("submit", e => {
+        e.preventDefault();
+
+        const name = $("#name")
+          .val()
+          .trim();
+        const email = $("#email")
+          .val()
+          .trim();
+        const text = $("#message")
+          .val()
+          .trim();
+
+        const data = {
+          name,
+          email,
+          text
+        };
+
+        $.post("/email", data,function(){
+        console.log('server start sending');
+        
+        });
+         
+      });
+      </script>
+  
+
+    
+    <div id="container">
+    <%- messages('messages',locals) %>
+    <% if (errors) {%>
+        <% errors.forEach(function(error) { %>
+        <div class="alert alert-danger">
+            <%= error.msg %>
+        </div>
+        <% });%>
+    <% }%>
+
+
+
+
+

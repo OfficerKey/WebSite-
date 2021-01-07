@@ -1,0 +1,3 @@
+C:\Users\LENOVO\Desktop\Папка всего\Landing-page\Diplom\Diplom\obj\Debug\Diplom.njsprojAssemblyReference.cache
+C:\Users\LENOVO\Desktop\Папка всего\Landing-page\Diplom\Diplom\obj\Debug\Diplom.njsproj.CoreCompileInputs.cache
+C:\Users\LENOVO\Desktop\Папка всего\Landing-page\Diplom\Diplom\bin\Microsoft.NodejsTools.WebRole.dll

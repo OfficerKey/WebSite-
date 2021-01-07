@@ -1,0 +1,58 @@
+.header, .headerInner, .info, .slider, .middle, .new, .sale, .novinka, .product-title, .product-price, .quantity{
+	display: block;
+}
+
+.logo, .search, .vhod, .korzina, .product, .li{
+	display: inline-block;
+}
+
+#wrapper{
+	display: block;
+}
+
+nav{
+	display: block;
+}
+
+* {box-sizing: border-box;}
+form {
+  width: auto;
+  float: right;
+  margin-right: 30px;
+}
+.search-input {
+  width: 250px;
+  height: 42px;
+  padding-left: 15px;
+  border-radius: 42px;
+  border: 2px solid #324b4e;
+  background: #F9F0DA;
+  outline: none;
+  position: relative;
+  transition: .3s linear;
+}
+.search-input:focus {
+  width: 300px;
+}
+.search-but {
+  width: 42px;
+  height: 42px;
+  background: none;
+  border: none;
+ /* position: absolute;*/
+  top: -2px;
+  right: 0;
+}
+.search-but:before{
+  content: "\f002";
+  font-family: FontAwesome;
+  color: #324b4e;
+}
+.add_to_cart_button{
+
+border-radius: 0 !important;
+height: auto;
+padding: 0 0 20px 0;
+outline: none;
+display: block;
+}

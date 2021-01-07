@@ -1,0 +1,143 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+
+  <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css'>
+
+      <link rel="stylesheet" href="../css/vhod.css">
+</head>
+<body>
+<header>
+  <nav>
+  		<div id="search" class="container">
+  			<form action='/category/products' method='GET'>
+  				<input type="text" name="search" placeholder="Знайдіть ліки тут..."  id="input">
+  				<button type="submit" id="button"></button>
+  			</form>
+		</div>
+
+    	<div id="brand">
+      		<div id="logo"><img src="../logo.png" id="logimg" class="logimg"></div>
+    		 <!-- <div id="word-mark"></div>-->
+   		 </div>
+
+    	<div id="menu">
+      		<div id="menu-toggle">
+        		<div id="menu-icon">
+          			<div class="bar"></div>
+          			<div class="bar"></div>
+          			<div class="bar"></div>
+        	</div>
+      </div>
+      <ul id="limg">
+      	<% pages.forEach(function(page){ %>
+                        <% if (page.slug == "home") { %>
+                        <li><a href="/"><%= page.title %></a></li>
+                        <% } else {%>
+                        <li><a href="/<%= page.slug %>"><%= page.title %></a></li>
+                        <% } %>
+                        <% }); %>
+        <li><a href="#section00">Про нас</a></li>
+        <li><a href="#section01" class="limg"><img src="../map.png" style="width: 50px; height: 50px;"></a></li>
+        <li><a href="#section02"class="limg"><img src="../telegram.png" style="width: 50px; height: 50px;"></a></li>
+        <% if(user) { %>
+         <li><a href="/users/logout" class="limg">Hi <%= user.username %>. Logout</a></li>
+        <% } else { %>
+         <li><a href="/users/login" class="limg"><img src="../vhod.png" style="width: 40px; height: 40px;"></a></li>
+        <% } %>
+        <li>
+        <a href="/cart/checkout" class="limg">
+        <img src="../korzina.png" style="width: 40px; height: 40px;">
+        <% if(typeof cart !=="undefined") { %>
+        <%= cart.length %>
+
+        <% } else { %>
+        0
+        <% } %>
+        </a> 
+        </li>
+      </ul>
+    </div>
+  </nav>
+  </header>
+    <div id="container">
+    
+  <div id="hero-section">
+  <%- messages('messages',locals) %>
+    <% if (errors) {%>
+        <% errors.forEach(function(error) { %>
+        <div class="alert alert-danger">
+            <h1><%= error.msg %><h1>
+        </div>
+        <% });%>
+    <% }%>
+<div id="login">
+  	<h2>Натисніть, якщо ви вже маєте аккаунт</h2>
+
+<button onclick="document.getElementById('id01').style.display='block'" style="width:auto;" class="nach">Увійти</button>
+
+<div id="id01" class="modal">
+  
+  <form method="post" class="modal-content animate" action="/users/login">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">×</span>
+      <h1>Log in</h1>
+    </div>
+
+    <div class="container">
+      <label for="uname"><b>Ім'я користувача</b></label>
+      <input type="text" placeholder="Введіть ім'я користувача" name="username" required>
+
+      <label for="psw"><b>Пароль</b></label>
+      <input type="password" placeholder="Введіть пароль" name="password" required>
+      <button type="submit">Увійти</button>
+    </div>
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Відмінити</button>
+    </div>
+  </form>
+</div>
+</div>
+
+<div id="registr">
+  	<h2>Натисніть, якщо вам потрібно зареєструвати новий аккаунт</h2>
+
+<button onclick="document.getElementById('id02').style.display='block'" style="width:auto;" class="nach">Зареєструватись</button>
+
+<div id="id02" class="modal">
+  
+  <form method="post" class="modal-content animate" action="/users/register">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">×</span>
+      <h1>Sign Up</h1>
+    </div>
+
+    <div class="container">
+
+      <label for="uname"><b>Ім'я</b></label>
+      <input type="text" placeholder="Введіть ім'я користувача" name="name" required>
+      <label for="uname"><b>Email</b></label>
+      <input type="text" placeholder="Введіть Email" name="email" required>
+      <label for="uphone"><b>Введіть свій номер телефону</b></label>
+      <input type="text" placeholder="Введіть номер телефону" name="phone" required>
+      <label for="uname"><b>Ім'я користувача</b></label>
+      <input type="text" placeholder="Введіть ім'я користувача" name="username" required>
+      <label for="psw"><b>Пароль</b></label>
+      <input type="password" placeholder="Введіть пароль" name="password" required>
+      <label for="psw"><b>Повторне введення паролю</b></label>
+      <input type="password" placeholder="Введіть пароль ще раз" name="password2" required>
+      <button type="submit">Зареєструватись</button>
+    </div>
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Відмінити</button>
+    </div>
+  </form>
+</div>
+</div>
+
+  </div>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+    <script  src="../js/index.js"></script>

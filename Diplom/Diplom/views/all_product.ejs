@@ -1,0 +1,39 @@
+﻿<%- include ('_layouts/header3'); -%>
+
+
+    <div id="colRight" >
+      <div class="wrapper" align="center">
+        <% products.forEach(function(p){ %>
+            <div class="card">
+              <div class="face face1">
+                <div class="content">
+                  <a href="/category/products/<%= p.category %>/<%=p.slug %>"> 
+                 <img src="/product_images/<%= p.id %>/<%= p.image %>">
+                 </a>
+                  <h3><%= p.title %></h3>
+                  <h4><%= parseFloat(p.price).toFixed(2) %> грн.</h4>
+                </div>
+              </div>
+
+              <div class="face face2">
+                <div class="content">
+                  <p><%= p.desc %></p>
+                  <a href="/cart/add/<%= p.slug %>">Купити</a>
+                </div>
+              </div>
+            </div>
+            <% }); %>
+         
+          </div>
+</div>
+          <div id="container">
+    <%- messages('messages',locals) %>
+    <% if (errors) {%>
+        <% errors.forEach(function(error) { %>
+        <div class="alert alert-danger">
+            <%= error.msg %>
+        </div>
+        <% });%>
+    <% }%>
+
+<%- include ('_layouts/footer3'); -%>

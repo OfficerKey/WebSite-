@@ -1,0 +1,31 @@
+﻿<%- include ('_layouts/header2') -%>
+ <div id="colLeft">
+      <div class="category-wrap">
+      <h3>Орган впливу</h3>
+      <table>
+        <tr><td><a href="/category/products">Усі продукти</a></td></tr>
+      <% categories.forEach(function(c){ %>
+
+
+        <tr><td><a href="/category/products/<%= c.slug %>"><%= c.title %></a></td></tr>
+        
+        <% }); %>
+      </table>
+    </div>
+     </div><!-- Конец коллефт -->
+</div>
+</div>
+
+
+<div id="container">
+    <%- messages('messages',locals) %>
+    <% if (errors) {%>
+        <% errors.forEach(function(error) { %>
+        <div class="alert alert-danger">
+            <%= error.msg %>
+        </div>
+        <% });%>
+    <% }%>
+
+
+<%- include ('_layouts/footer2'); %>

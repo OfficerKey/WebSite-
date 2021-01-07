@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">14.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <Name>Diplom</Name>
+    <RootNamespace>Diplom</RootNamespace>
+    <SaveNodeJsSettingsInProjectFile>True</SaveNodeJsSettingsInProjectFile>
+    <LaunchUrl>www.Liza.com.ua</LaunchUrl>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>b42b4e5d-3693-4352-867e-a50e843fec3c</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <StartupFile>app.js</StartupFile>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <ProjectTypeGuids>{3AF33F2E-1136-4D97-BBB7-1795711AC8B8};{349c5851-65df-11da-9384-00065b846f21};{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}</ProjectTypeGuids>
+    <NodejsPort>80</NodejsPort>
+    <StartWebBrowser>True</StartWebBrowser>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="app.js" />
+    <Content Include="config\auth.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="config\passport.js" />
+    <Content Include="config\database.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="models\callback.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="models\category.js" />
+    <Content Include="models\user.js" />
+    <Content Include="models\page.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="models\products.js" />
+    <Content Include="public\css\catalogstyle.css" />
+    <Content Include="public\css\category2.css" />
+    <Content Include="public\css\header2%28don%27t touch Liza%29.css" />
+    <Content Include="public\css\style.css" />
+    <Content Include="public\css\style2.css" />
+    <Content Include="public\css\styleOfProducts.css" />
+    <Content Include="public\js\index.js" />
+    <Content Include="public\js\main.js" />
+    <Content Include="public\product_images\5ed1132ca3a30f2c6821dde4\cetrun.jpg" />
+    <Content Include="public\product_images\5ed1137c7746b73ca46def18\hlorgeksydyn.jpg" />
+    <Content Include="public\product_images\5ed2d7ec8dc10e4c98f3a433\cytramoldarnytca.png" />
+    <Content Include="public\product_images\5ed2d8e98dc10e4c98f3a434\paracetamol_darnytsa.png" />
+    <Content Include="public\product_images\5ed2da9c8dc10e4c98f3a435\acitasilova_kislota.png" />
+    <Content Include="public\product_images\5ed2dc858dc10e4c98f3a436\enalaprul.png" />
+    <Content Include="public\product_images\5ed2dd078dc10e4c98f3a437\kaptopresdarnytsa.png" />
+    <Content Include="public\product_images\5ed2dd9a8dc10e4c98f3a438\korvalmant.png" />
+    <Content Include="public\product_images\5ed2de508dc10e4c98f3a439\ranitadil_darnytsa.png" />
+    <Content Include="public\product_images\5ed2def78dc10e4c98f3a43a\no_shpa.png" />
+    <Content Include="public\product_images\5ed2df858dc10e4c98f3a43b\analgun.png" />
+    <Content Include="public\product_images\5ed2e04d8dc10e4c98f3a43c\paracetamol.png" />
+    <Content Include="public\product_images\5ed2e0f18dc10e4c98f3a43d\dyklofenak.png" />
+    <Content Include="public\product_images\5ed2e17a8dc10e4c98f3a43e\kanefron_N.png" />
+    <Content Include="public\product_images\5ed2e1d88dc10e4c98f3a43f\nefrofit.png" />
+    <Content Include="public\product_images\5ed2e2a28dc10e4c98f3a440\urolesan.png" />
+    <Content Include="public\product_images\5ed2e3658dc10e4c98f3a441\azitromitsin.png" />
+    <Content Include="public\product_images\5ed2e41d8dc10e4c98f3a442\streptocud.png" />
+    <Content Include="public\product_images\5ed2e4678dc10e4c98f3a443\sinus_lift.png" />
+    <Content Include="public\product_images\5ed2e4d88dc10e4c98f3a444\loratadun.png" />
+    <Content Include="public\product_images\5ed2e53f8dc10e4c98f3a445\cetrun.png" />
+    <Content Include="public\product_images\5ed2e59a8dc10e4c98f3a446\diazolin.png" />
+    <Content Include="public\product_images\5ed2e5fb8dc10e4c98f3a447\valerynka.png" />
+    <Content Include="public\product_images\5ed2e6ca8dc10e4c98f3a448\bifren.png" />
+    <Content Include="public\product_images\5ed2e6fd8dc10e4c98f3a449\no_sol.png" />
+    <Content Include="public\product_images\5ed2e7538dc10e4c98f3a44a\amiksyn.png" />
+    <Content Include="public\product_images\5ed2e7af8dc10e4c98f3a44b\test.png" />
+    <Content Include="public\product_images\5ed2e8448dc10e4c98f3a44c\nazaferon.png" />
+    <Content Include="public\product_images\5ed2e8898dc10e4c98f3a44d\hlorgeksydyn.png" />
+    <Content Include="public\product_images\5ed2e9298dc10e4c98f3a44e\perekys_vodovoroda.png" />
+    <Content Include="public\product_images\5ed2e9588dc10e4c98f3a44f\yod.png" />
+    <Content Include="public\product_images\5ed2e9d28dc10e4c98f3a450\diabeton.png" />
+    <Content Include="public\product_images\5ed2ea4c8dc10e4c98f3a451\metformin.png" />
+    <Content Include="public\product_images\5ed2ead88dc10e4c98f3a452\siofor.png" />
+    <Content Include="public\scss\style.scss" />
+    <Content Include="routes\admin_categories.js" />
+    <Content Include="routes\admin_products.js" />
+    <Content Include="routes\category.js" />
+    <Content Include="routes\cart.js" />
+    <Content Include="routes\search.js" />
+    <Content Include="routes\users.js" />
+    <Content Include="routes\products.js" />
+    <Content Include="routes\pages.js" />
+    <Content Include="routes\admin_pages.js" />
+    <Content Include="package.json" />
+    <Content Include="public\stylesheets\main.css" />
+    <Content Include="README.md" />
+    <Content Include="views\add_category.ejs" />
+    <Content Include="views\add_page.ejs" />
+    <Content Include="views\add_product.ejs" />
+    <Content Include="views\cat_product.ejs" />
+    <Content Include="views\categories.ejs" />
+    <Content Include="views\category.ejs" />
+    <Content Include="views\edit_category.ejs" />
+    <Content Include="views\edit_page.ejs" />
+    <Content Include="views\edit_product.ejs" />
+    <Content Include="views\all_product.ejs" />
+    <Content Include="views\checkout.ejs" />
+    <Content Include="views\login.ejs" />
+    <Content Include="views\register.ejs" />
+    <Content Include="views\index.ejs" />
+    <Content Include="views\messages.ejs" />
+    <Content Include="views\pages.ejs" />
+    <Content Include="views\products.ejs" />
+    <Content Include="views\_layouts\adminfooter.ejs" />
+    <Content Include="views\_layouts\adminheader.ejs" />
+    <Content Include="views\_layouts\footerReg.ejs" />
+    <Content Include="views\_layouts\footerCart.ejs" />
+    <Content Include="views\_layouts\footer3.ejs" />
+    <Content Include="views\_layouts\footer2.ejs" />
+    <Content Include="views\_layouts\footer.ejs" />
+    <Content Include="views\_layouts\headerReg.ejs" />
+    <Content Include="views\_layouts\headerCart.ejs" />
+    <Content Include="views\_layouts\header3.ejs" />
+    <Content Include="views\_layouts\header2.ejs" />
+    <Content Include="views\_layouts\header.ejs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="config\" />
+    <Folder Include="models\" />
+    <Folder Include="public\" />
+    <Folder Include="public\css\" />
+    <Folder Include="public\images\" />
+    <Folder Include="public\javascripts\" />
+    <Folder Include="public\js\" />
+    <Folder Include="public\product_images\" />
+    <Folder Include="public\product_images\5ed1132ca3a30f2c6821dde4\" />
+    <Folder Include="public\product_images\5ed1132ca3a30f2c6821dde4\gallery\" />
+    <Folder Include="public\product_images\5ed1132ca3a30f2c6821dde4\gallery\thumbs\" />
+    <Folder Include="public\product_images\5ed1137c7746b73ca46def18\" />
+    <Folder Include="public\product_images\5ed1137c7746b73ca46def18\gallery\" />
+    <Folder Include="public\product_images\5ed1137c7746b73ca46def18\gallery\thumbs\" />
+    <Folder Include="public\product_images\5ed2d7ec8dc10e4c98f3a433\" />
+    <Folder Include="public\product_images\5ed2d7ec8dc10e4c98f3a433\gallery\" />
+    <Folder Include="public\product_images\5ed2d7ec8dc10e4c98f3a433\gallery\thumbs\" />
+    <Folder Include="public\product_images\5ed2d8e98dc10e4c98f3a434\" />
+    <Folder Include="public\product_images\5ed2d8e98dc10e4c98f3a434\gallery\" />
+    <Folder Include="public\product_images\5ed2d8e98dc10e4c98f3a434\gallery\thumbs\" />
+    <Folder Include="public\product_images\5ed2da9c8dc10e4c98f3a435\" />
+    <Folder Include="public\product_images\5ed2da9c8dc10e4c98f3a435\gallery\" />
+    <Folder Include="public\product_images\5ed2da9c8dc10e4c98f3a435\gallery\thumbs\" />
+    <Folder Include="public\product_images\5ed2dc858dc10e4c98f3a436\" />
+    <Folder Include="public\product_images\5ed2dc858dc10e4c98f3a436\gallery\" />
+    <Folder Include="public\product_images\5ed2dc858dc10e4c98f3a436\gallery\thumbs\" />
+    <Folder Include="public\product_images\5ed2dd078dc10e4c98f3a437\" />
+    <Folder Include="public\product_images\5ed2dd078dc10e4c98f3a437\gallery\" />
+    <Folder Include="public\product_images\5ed2dd078dc10e4c98f3a437\gallery\thumbs\" />
+    <Folder Include="public\product_images\5ed2dd9a8dc10e4c98f3a438\" />
+    <Folder Include="public\product_images\5ed2dd9a8dc10e4c98f3a438\gallery\" />
+    <Folder Include="public\product_images\5ed2dd9a8dc10e4c98f3a438\gallery\thumbs\" />
+    <Folder Include="public\product_images\5ed2de508dc10e4c98f3a439\" />
+    <Folder Include="public\product_images\5ed2de508dc10e4c98f3a439\gallery\" />
+    <Folder Include="public\product_images\5ed2de508dc10e4c98f3a439\gallery\thumbs\" />
+    <Folder Include="public\product_images\5ed2def78dc10e4c98f3a43a\" />
+    <Folder Include="public\product_images\5ed2def78dc10e4c98f3a43a\gallery\" />
+    <Folder Include="public\product_images\5ed2def78dc10e4c98f3a43a\gallery\thumbs\" />
+    <Folder Include="public\product_images\5ed2df858dc10e4c98f3a43b\" />
+    <Folder Include="public\product_images\5ed2df858dc10e4c98f3a43b\gallery\" />
+    <Folder Include="public\product_images\5ed2df858dc10e4c98f3a43b\gallery\thumbs\" />
+    <Folder Include="public\product_images\5ed2e04d8dc10e4c98f3a43c\" />
+    <Folder Include="public\product_images\5ed2e04d8dc10e4c98f3a43c\gallery\" />
+    <Folder Include="public\product_images\5ed2e04d8dc10e4c98f3a43c\gallery\thumbs\" />
+    <Folder Include="public\product_images\5ed2e0f18dc10e4c98f3a43d\" />
+    <Folder Include="public\product_images\5ed2e0f18dc10e4c98f3a43d\gallery\" />
+    <Folder Include="public\product_images\5ed2e0f18dc10e4c98f3a43d\gallery\thumbs\" />
+    <Folder Include="public\product_images\5ed2e17a8dc10e4c98f3a43e\" />
+    <Folder Include="public\product_images\5ed2e17a8dc10e4c98f3a43e\gallery\" />
+    <Folder Include="public\product_images\5ed2e17a8dc10e4c98f3a43e\gallery\thumbs\" />
+    <Folder Include="public\product_images\5ed2e1d88dc10e4c98f3a43f\" />
+    <Folder Include="public\product_images\5ed2e1d88dc10e4c98f3a43f\gallery\" />
+    <Folder Include="public\product_images\5ed2e1d88dc10e4c98f3a43f\gallery\thumbs\" />
+    <Folder Include="public\product_images\5ed2e2a28dc10e4c98f3a440\" />
+    <Folder Include="public\product_images\5ed2e2a28dc10e4c98f3a440\gallery\" />
+    <Folder Include="public\product_images\5ed2e2a28dc10e4c98f3a440\gallery\thumbs\" />
+    <Folder Include="public\product_images\5ed2e3658dc10e4c98f3a441\" />
+    <Folder Include="public\product_images\5ed2e3658dc10e4c98f3a441\gallery\" />
+    <Folder Include="public\product_images\5ed2e3658dc10e4c98f3a441\gallery\thumbs\" />
+    <Folder Include="public\product_images\5ed2e41d8dc10e4c98f3a442\" />
+    <Folder Include="public\product_images\5ed2e41d8dc10e4c98f3a442\gallery\" />
+    <Folder Include="public\product_images\5ed2e41d8dc10e4c98f3a442\gallery\thumbs\" />
+    <Folder Include="public\product_images\5ed2e4678dc10e4c98f3a443\" />
+    <Folder Include="public\product_images\5ed2e4678dc10e4c98f3a443\gallery\" />
+    <Folder Include="public\product_images\5ed2e4678dc10e4c98f3a443\gallery\thumbs\" />
+    <Folder Include="public\product_images\5ed2e4d88dc10e4c98f3a444\" />
+    <Folder Include="public\product_images\5ed2e4d88dc10e4c98f3a444\gallery\" />
+    <Folder Include="public\product_images\5ed2e4d88dc10e4c98f3a444\gallery\thumbs\" />
+    <Folder Include="public\product_images\5ed2e53f8dc10e4c98f3a445\" />
+    <Folder Include="public\product_images\5ed2e53f8dc10e4c98f3a445\gallery\" />
+    <Folder Include="public\product_images\5ed2e53f8dc10e4c98f3a445\gallery\thumbs\" />
+    <Folder Include="public\product_images\5ed2e59a8dc10e4c98f3a446\" />
+    <Folder Include="public\product_images\5ed2e59a8dc10e4c98f3a446\gallery\" />
+    <Folder Include="public\product_images\5ed2e59a8dc10e4c98f3a446\gallery\thumbs\" />
+    <Folder Include="public\product_images\5ed2e5fb8dc10e4c98f3a447\" />
+    <Folder Include="public\product_images\5ed2e5fb8dc10e4c98f3a447\gallery\" />
+    <Folder Include="public\product_images\5ed2e5fb8dc10e4c98f3a447\gallery\thumbs\" />
+    <Folder Include="public\product_images\5ed2e6ca8dc10e4c98f3a448\" />
+    <Folder Include="public\product_images\5ed2e6ca8dc10e4c98f3a448\gallery\" />
+    <Folder Include="public\product_images\5ed2e6ca8dc10e4c98f3a448\gallery\thumbs\" />
+    <Folder Include="public\product_images\5ed2e6fd8dc10e4c98f3a449\" />
+    <Folder Include="public\product_images\5ed2e6fd8dc10e4c98f3a449\gallery\" />
+    <Folder Include="public\product_images\5ed2e6fd8dc10e4c98f3a449\gallery\thumbs\" />
+    <Folder Include="public\product_images\5ed2e7538dc10e4c98f3a44a\" />
+    <Folder Include="public\product_images\5ed2e7538dc10e4c98f3a44a\gallery\" />
+    <Folder Include="public\product_images\5ed2e7538dc10e4c98f3a44a\gallery\thumbs\" />
+    <Folder Include="public\product_images\5ed2e7af8dc10e4c98f3a44b\" />
+    <Folder Include="public\product_images\5ed2e7af8dc10e4c98f3a44b\gallery\" />
+    <Folder Include="public\product_images\5ed2e7af8dc10e4c98f3a44b\gallery\thumbs\" />
+    <Folder Include="public\product_images\5ed2e8448dc10e4c98f3a44c\" />
+    <Folder Include="public\product_images\5ed2e8448dc10e4c98f3a44c\gallery\" />
+    <Folder Include="public\product_images\5ed2e8448dc10e4c98f3a44c\gallery\thumbs\" />
+    <Folder Include="public\product_images\5ed2e8898dc10e4c98f3a44d\" />
+    <Folder Include="public\product_images\5ed2e8898dc10e4c98f3a44d\gallery\" />
+    <Folder Include="public\product_images\5ed2e8898dc10e4c98f3a44d\gallery\thumbs\" />
+    <Folder Include="public\product_images\5ed2e9298dc10e4c98f3a44e\" />
+    <Folder Include="public\product_images\5ed2e9298dc10e4c98f3a44e\gallery\" />
+    <Folder Include="public\product_images\5ed2e9298dc10e4c98f3a44e\gallery\thumbs\" />
+    <Folder Include="public\product_images\5ed2e9588dc10e4c98f3a44f\" />
+    <Folder Include="public\product_images\5ed2e9588dc10e4c98f3a44f\gallery\" />
+    <Folder Include="public\product_images\5ed2e9588dc10e4c98f3a44f\gallery\thumbs\" />
+    <Folder Include="public\product_images\5ed2e9d28dc10e4c98f3a450\" />
+    <Folder Include="public\product_images\5ed2e9d28dc10e4c98f3a450\gallery\" />
+    <Folder Include="public\product_images\5ed2e9d28dc10e4c98f3a450\gallery\thumbs\" />
+    <Folder Include="public\product_images\5ed2ea4c8dc10e4c98f3a451\" />
+    <Folder Include="public\product_images\5ed2ea4c8dc10e4c98f3a451\gallery\" />
+    <Folder Include="public\product_images\5ed2ea4c8dc10e4c98f3a451\gallery\thumbs\" />
+    <Folder Include="public\product_images\5ed2ead88dc10e4c98f3a452\" />
+    <Folder Include="public\product_images\5ed2ead88dc10e4c98f3a452\gallery\" />
+    <Folder Include="public\product_images\5ed2ead88dc10e4c98f3a452\gallery\thumbs\" />
+    <Folder Include="public\scss\" />
+    <Folder Include="public\stylesheets\" />
+    <Folder Include="routes\" />
+    <Folder Include="views\" />
+    <Folder Include="views\_layouts\" />
+  </ItemGroup>
+  <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsToolsV2.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:48022/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>True</UseCustomServer>
+          <CustomServerUrl>http://localhost:1337</CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}" User="">
+        <WebProjectProperties>
+          <StartPageUrl>
+          </StartPageUrl>
+          <StartAction>CurrentPage</StartAction>
+          <AspNetDebugging>True</AspNetDebugging>
+          <SilverlightDebugging>False</SilverlightDebugging>
+          <NativeDebugging>False</NativeDebugging>
+          <SQLDebugging>False</SQLDebugging>
+          <ExternalProgram>
+          </ExternalProgram>
+          <StartExternalURL>
+          </StartExternalURL>
+          <StartCmdLineArguments>
+          </StartCmdLineArguments>
+          <StartWorkingDirectory>
+          </StartWorkingDirectory>
+          <EnableENC>False</EnableENC>
+          <AlwaysStartWebServerOnDebug>False</AlwaysStartWebServerOnDebug>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>
